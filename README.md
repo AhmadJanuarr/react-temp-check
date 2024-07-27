@@ -2,7 +2,10 @@
 
 ### DEMO
 
-<Gif>
+<video width="600" controls>
+  <source src="/public/gif/demo.mkv" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ### Feature
 
