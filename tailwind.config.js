@@ -11,11 +11,11 @@ export default {
       },
       keyframes: {
         fadeIn: {
-          "0%": { opacity: 0, transform: "translateY(-50px)" },
+          "0%": { opacity: 0, transform: "translateY(-100px)" },
           "100%": { opacity: 1, transform: "translateY(0)" },
         },
         slideUp: {
-          "0%": { opacity: 0, transform: "translateY(50px)" },
+          "0%": { opacity: 0, transform: "translateY(100px)" },
           "100%": { opacity: 1, transform: "translateY(0)" },
         },
       },

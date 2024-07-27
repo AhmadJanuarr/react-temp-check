@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import WeatherApp from "./component/Weather";
+import ClockComponent from "./component/Clock";
 
 function Layout({ children }) {
   return (
@@ -35,7 +36,7 @@ export default function App() {
       setError(error.message);
       setWeatherData(null);
     } finally {
-      setIsLoading(false);
+      setIsLoading(true);
     }
   };
 
@@ -53,6 +54,7 @@ export default function App() {
 
   return (
     <Layout>
+      <ClockComponent />
       <WeatherApp
         weatherData={weatherData}
         search={search}
