@@ -2,11 +2,7 @@
 
 ### DEMO
 
-<<<<<<< HEAD
 <img src="public/gif/demo.gif" >
-=======
-<img src="public/gif/demo.gif"/>
->>>>>>> c04c5e363f210b1254423f33a65d2baac3c5ae06
 
 ### Feature
 
