@@ -11,19 +11,31 @@ function Layout({ children }) {
 
 export default function App() {
   const [weatherData, setWeatherData] = useState(null);
-  const [search, setSearch] = useState("indonesia");
+  const [search, setSearch] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const fetchData = async (query) => {
     try {
+      setError(null);
       const fetching = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${
+        `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${
           import.meta.env.VITE_API_KEY
         }`
       );
+      if (!fetching.ok) {
+        throw new Error("...");
+      }
       const response = await fetching.json();
+      if (response.cod !== 200) {
+        throw new Error(response.message);
+      }
       setWeatherData(response);
     } catch (error) {
-      console.error(error);
+      setError(error.message);
+      setWeatherData(null);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -34,6 +46,9 @@ export default function App() {
     e.preventDefault();
     const value = e.target.elements.search.value;
     setSearch(value);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   };
 
   return (
@@ -42,6 +57,8 @@ export default function App() {
         weatherData={weatherData}
         search={search}
         handleSubmit={handleSubmit}
+        isLoading={isLoading}
+        error={error}
       />
     </Layout>
   );
