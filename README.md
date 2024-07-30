@@ -1,17 +1,17 @@
 # Work In Proggres
 
-### DEMO
+## Demo app
 
 <img src="public/gif/demo.gif" >
 
-### Features :
+## Features :
 
 - Our predefined list of over 200,000 locations.
 - Search for weather by city
 - Display a list of recipes with images and basic information
 - Error handling for invalid city names or API failures
 
-### feature in progress
+## Feature in progress
 
 - Responsive Mobile
 - Check temp will run in real time
